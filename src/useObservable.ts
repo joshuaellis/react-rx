@@ -42,6 +42,8 @@ export function useObservable<ObservableType extends Observable<any>, InitialVal
   observable: ObservableType,
   initialValue?: InitialValue | (() => InitialValue),
 ): InitialValue | ObservedValueOf<ObservableType> {
+  // eslint-disable-next-line react-compiler/react-compiler
+  'use no memo'
   if (!cache.has(observable)) {
     const entry: Partial<CacheRecord<ObservedValueOf<ObservableType>>> = {
       snapshot: getValue(initialValue) as ObservedValueOf<ObservableType>,
