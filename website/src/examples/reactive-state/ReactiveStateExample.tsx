@@ -1,3 +1,5 @@
+'use client'
+
 import {useMemo, useState} from 'react'
 import {useObservable} from 'react-rx'
 import {timer} from 'rxjs'
